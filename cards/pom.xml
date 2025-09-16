@@ -6,11 +6,13 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.5.5</version>
+
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.KDCB</groupId>
 	<artifactId>cards</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>cards</name>
 	<description>Cards Microservice</description>
 	<url/>
@@ -112,6 +114,24 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.3.1</version>
+				<configuration>
+					<from>
+						<image>openjdk:21-jdk</image>
+					</from>
+					<to>
+						<image>bank/${project.artifactId}:v1</image>
+					</to>
+					<container>
+						<mainClass>com.KDCB.cards.CardsApplication</mainClass> <!-- Replace with your actual main class -->
+					</container>
+				</configuration>
+
+			</plugin>
+
 		</plugins>
 	</build>
 
